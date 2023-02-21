@@ -13,7 +13,7 @@ export default defineTrigger({
         raw: $.lastExecutionStep.dataOut,
         meta: {
           internalId: '',
-        }
+        },
       });
     }
   },
