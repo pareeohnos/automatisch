@@ -6,6 +6,8 @@ const addAuthHeader: TBeforeRequest = ($, requestConfig) => {
     requestConfig.headers.PTToken = authorizationHeader;
   }
 
+  requestConfig.headers['Content-Type'] = 'application/json; charset=utf-8';
+
   return requestConfig;
 };
 

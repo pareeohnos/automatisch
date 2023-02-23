@@ -10,7 +10,7 @@ export default defineAction({
       key: 'project',
       type: 'string' as const,
       required: true,
-      variables: true,
+      variables: false,
     },
     {
       label: 'Custom field',
@@ -28,24 +28,24 @@ export default defineAction({
             name: 'key',
             value: 'listCustomFields',
           },
-          // {
-          //   name: 'parameters.project',
-          //   value: '{parameters.project}',
-          // },
+          {
+            name: 'parameters.project',
+            value: '{parameters.project}',
+          },
         ],
       },
     },
     {
       label: 'Issue ID',
       key: 'issueId',
-      type: 'dropdown' as const,
+      type: 'string' as const,
       required: true,
       variables: true,
     },
     {
       label: 'Monday ID',
       key: 'mondayId',
-      type: 'dropdown' as const,
+      type: 'string' as const,
       required: true,
       variables: true,
     },
@@ -66,7 +66,7 @@ export default defineAction({
     };
 
     const response = await $.http.put(
-      `/projects/${project}/issues/${issueID}`,
+      `/projects/${project}/issues/${issueID}.json`,
       payload
     );
 

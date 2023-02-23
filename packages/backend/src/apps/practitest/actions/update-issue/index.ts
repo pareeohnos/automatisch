@@ -7,7 +7,6 @@ export default defineAction({
   arguments: [],
 
   async run($) {
-    console.log('GINA');
     $.setActionItem({
       raw: { TEST: 'TEST' },
     });
