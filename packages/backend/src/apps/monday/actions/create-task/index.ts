@@ -1,12 +1,12 @@
 import defineAction from '../../../../helpers/define-action';
 import getColumnValues from '../../common/column-values';
-import arguments from '../arguments';
+import { actionArguments } from '../arguments';
 
 export default defineAction({
   name: 'Create a new item',
   key: 'createItem',
   description: 'Create a new item',
-  arguments: arguments,
+  arguments: actionArguments,
 
   async run($) {
     const board = $.step.parameters.board;
@@ -17,7 +17,7 @@ export default defineAction({
     const query = `mutation { create_item (board_id: ${board}, item_name: \"${$.step.parameters.name}\", group_id: \"${group}\", column_values: ${columnValuesJson}) { id }}`;
 
     const response = await $.http.post('/', { query });
-    console.log(response.data);
+
     $.setActionItem({
       raw: response.data.data.create_item,
     });

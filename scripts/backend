@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+cd packages/backend
+PORT=3000
+
+cmd="yarn run dev"
+exec $cmd

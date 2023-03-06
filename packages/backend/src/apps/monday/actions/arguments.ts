@@ -1,10 +1,10 @@
-export default [
+const commonArguments = [
   {
     label: 'Board',
     key: 'board',
     type: 'dropdown' as const,
     required: true,
-    description: 'Which board should the item be created on',
+    description: 'Which board should we connect to?',
     variables: false,
     source: {
       type: 'query',
@@ -17,30 +17,6 @@ export default [
       ],
     },
   },
-  {
-    label: 'Group',
-    key: 'group',
-    type: 'dropdown' as const,
-    required: true,
-    description: 'Which group should the story be created in',
-    variables: false,
-    dependsOn: ['parameters.board'],
-    source: {
-      type: 'query',
-      name: 'getDynamicData',
-      arguments: [
-        {
-          name: 'key',
-          value: 'listGroups',
-        },
-        {
-          name: 'parameters.board',
-          value: '{parameters.board}',
-        },
-      ],
-    },
-  },
-
   {
     label: 'Status column',
     key: 'statusColumn',
@@ -156,6 +132,33 @@ export default [
       ],
     },
   },
+];
+
+export const actionArguments = [
+  ...commonArguments,
+  {
+    label: 'Group',
+    key: 'group',
+    type: 'dropdown' as const,
+    required: true,
+    description: 'Which group should the story be created in',
+    variables: false,
+    dependsOn: ['parameters.board'],
+    source: {
+      type: 'query',
+      name: 'getDynamicData',
+      arguments: [
+        {
+          name: 'key',
+          value: 'listGroups',
+        },
+        {
+          name: 'parameters.board',
+          value: '{parameters.board}',
+        },
+      ],
+    },
+  },
   {
     label: 'ID',
     key: 'id',
@@ -213,3 +216,7 @@ export default [
     variables: true,
   },
 ];
+
+export const triggerArguments = [...commonArguments];
+
+export default [];

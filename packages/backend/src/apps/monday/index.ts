@@ -2,6 +2,7 @@ import defineApp from '../../helpers/define-app';
 import addAuthHeader from './common/add-auth-header';
 import auth from './auth';
 import actions from './actions';
+import triggers from './triggers';
 import dynamicData from './dynamic-data';
 
 export default defineApp({
@@ -17,4 +18,5 @@ export default defineApp({
   auth,
   dynamicData,
   actions,
+  triggers,
 });

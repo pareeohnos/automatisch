@@ -1,12 +1,12 @@
 import defineAction from '../../../../helpers/define-action';
 import getColumnValues from '../../common/column-values';
-import arguments from '../arguments';
+import { actionArguments } from '../arguments';
 
 export default defineAction({
   name: 'Update story',
   key: 'updateStory',
   description: 'Update an existing story',
-  arguments: arguments,
+  arguments: actionArguments,
 
   async run($) {
     const board = $.step.parameters.board;

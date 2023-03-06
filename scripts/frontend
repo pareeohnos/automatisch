@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+cd packages/web
+PORT=3001
+
+cmd="yarn run dev"
+exec $cmd
