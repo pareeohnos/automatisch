@@ -7,7 +7,8 @@ const STATUS_MAPPING: { [index: string]: string } = {
   'Internal QA': 'fixed',
   'Resolved / completed': 'closed',
   'Rejected appears to work': 'rejected',
-  'Rejected <get other reason>': 'rejected',
+  'Rejected feature request': 'rejected',
+  'Rejected invalid requirement': 'Rejected invalid requirement',
   Duplicate: 'duplicate',
   'Failed retest': 'opened',
 };

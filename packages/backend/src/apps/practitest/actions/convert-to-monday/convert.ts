@@ -7,6 +7,7 @@ const STATUS_MAPPING: IJSONObject = {
   fixed: 'Internal QA',
   closed: 'Resolved / completed',
   rejected: 'Rejected appears to work',
+  'Rejected invalid requirement': 'Rejected invalid requirement',
   duplicate: 'Duplicate',
   opened: 'Failed retest',
 };
